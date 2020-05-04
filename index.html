@@ -230,7 +230,7 @@
     let interval;
     let repeat;
 
-    function init() {
+        function init() {
         let x = Math.floor(document.documentElement.clientWidth);
         let y = Math.floor(document.documentElement.clientHeight);
 
@@ -241,10 +241,12 @@
             } else {
                 canvas.width = x;
                 canvas.height = x;
-                canvas.style.marginTop = String(1.2*setupInfo.clientHeight) + 'px';
         };
-    };
 
+        if ( y > x) {
+          canvas.style.marginTop = String(1.2*setupInfo.clientHeight) + 'px';
+        }
+    };
 window.addEventListener('load',init);
 
 const nomi = document.getElementById('nomiInput');

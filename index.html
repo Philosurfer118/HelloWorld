@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    <title>Lissajous curve</title>
+    <title>Dropdown list example</title>
 
      <style>
           html {
@@ -226,7 +226,7 @@
 
     let canWid = canvas.width;
     let canHig = canvas.height;
-    let stpHig = setupInfo.height;
+ 
     let interval;
     let repeat;
 
@@ -237,9 +237,11 @@
         if ( y < x ) {
                 canvas.width = y;
                 canvas.height = y;
+
             } else {
                 canvas.width = x;
                 canvas.height = x;
+                canvas.style.marginTop = String(1.2*setupInfo.clientHeight) + 'px';
         };
     };
 
@@ -256,7 +258,6 @@ function animation() {
   let canWid = canvas.width;
   let canHig = canvas.height;
   let r = (canWid/4) - 25;
-//    let stpHig = setupInfo.height;
   
   let nom = new Ellipse(r, (canWid/4)*3,canHig/4);
   let nomSpeed = Number(nomi.value);
